@@ -38,8 +38,6 @@ def main(argv):
         elif opt in ("-d"):
             description(arg)
 
-
-
 if __name__ == "__main__":
     
     main(sys.argv[1:])
