@@ -44,7 +44,8 @@ def netad(ip_cidr):
         exit()
     ip_as_a_bin_number = int(ip_to_bin_sanitize(ip), 2)
     cidr = ip_cidr.split("/",1)[1]
-    mask_as_a_bin_number = int(cidr_to_mask(cidr), 2)
+    cidr=(cidr_to_mask(cidr))
+    mask_as_a_bin_number = int(ip_to_bin_sanitize(cidr), 2)
     #Et logique pour determiner l'adresse de réseau
     logical_and = mask_as_a_bin_number & ip_as_a_bin_number
     #conversion en octet
@@ -59,7 +60,8 @@ def wildcard(ip_cidr):
         cidr = ip_cidr.split("/",1)[1]
     else:
         cidr = cidr
-    mask_as_a_bin_number = int(cidr_to_mask(cidr), 2)
+    cidr=(cidr_to_mask(cidr))
+    mask_as_a_bin_number = int(ip_to_bin_sanitize(cidr), 2)
 
     ip_inverse = '11111111111111111111111111111111'
     f = int(ip_inverse, 2)

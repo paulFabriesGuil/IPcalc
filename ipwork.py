@@ -35,5 +35,5 @@ def cidr_to_mask(cidr):
     second_part='0'*(32-cidr) #right
     mask_bin = first_part+second_part
     mask_bin = '.'.join([str(mask_bin)[i:i+8] for i in range(0, len(str(mask_bin)), 8)])
-    mask = ip_to_bin_sanitize(bin_to_ip(mask_bin))
+    mask = bin_to_ip(mask_bin)
     return mask

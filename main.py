@@ -2,10 +2,9 @@
 
 from ipwork import *
 from network import *
-import getopt, sys, argparse
+import getopt, sys
 
 def main(argv):
-    print(argv)
     # Define the possible options and arguments
     short_options = "hi:b:c:m:d:"
     long_options = ["help", "ip-to-bin", "bin-to-ip"]
@@ -24,19 +23,22 @@ def main(argv):
     # Process the options and arguments
     for opt, arg in opts:
         if opt in ("-h", "--help"):
-            print("script.py -o <outputfile>")
+            help()
             sys.exit()
         elif opt in ("-i", "--ip-to-bin"):
-            ip_to_bin(arg)
+            print(ip_to_bin(arg))
         elif opt in ("-b", "--bin-to-ip"):
-            bin_to_ip(arg)
+            print(bin_to_ip(arg))
             #verbose = True
         elif opt in ("-c"):
-            mask_to_cidr(arg)
+            print(mask_to_cidr(arg))
         elif opt in ("-m"):
-            cidr_to_mask(arg)
+            print(cidr_to_mask(arg))
         elif opt in ("-d"):
             description(arg)
+
+def help():
+    print("help")
 
 if __name__ == "__main__":
     
