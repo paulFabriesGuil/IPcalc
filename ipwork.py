@@ -2,14 +2,12 @@
 
 import math
 
-def ip_to_bin(zer):
-
-    ip_split = zer.split(".")
+def ip_to_bin(ip):
+    ip_split = ip.split(".")
     ip_bin = ('{0:08b}.{1:08b}.{2:08b}.{3:08b}'.format(int(ip_split[0]),int(ip_split[1]),int(ip_split[2]),int(ip_split[3])))
     return ip_bin
 
 def ip_to_bin_sanitize(ip):
-
     ip_bin = str(ip_to_bin(ip))
     op_ipbin = ip_bin.replace('.','')
     return op_ipbin

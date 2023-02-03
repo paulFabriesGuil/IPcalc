@@ -1,7 +1,11 @@
 #! /usr/bin/python
 
 from ipwork import *
+from main import *
 import math
+
+#if verbose == True:
+#    print("verbose")
 
 def description(ip_cidr):
     NETAD = str(netad(ip_cidr))
@@ -27,6 +31,7 @@ def byteconverter(ip):
     broad_addr = broad_addr[:-1]
     return broad_addr
 
+# todo accepter plusieurs type d'input...
 def host(ip_cidr):
     if len(ip_cidr) > 18:
         print("entrez une valeur valide type 192.168.1.1/18")
@@ -62,7 +67,6 @@ def wildcard(ip_cidr):
         cidr = cidr
     cidr=(cidr_to_mask(cidr))
     mask_as_a_bin_number = int(ip_to_bin_sanitize(cidr), 2)
-
     ip_inverse = '11111111111111111111111111111111'
     f = int(ip_inverse, 2)
     g = mask_as_a_bin_number ^ f

@@ -27,5 +27,4 @@ def member(network,totest):
         print(totest +" est une adresse hors-plage")
         exit()
 
-
 member('10.114.96.127/25', "10.114.95.255)

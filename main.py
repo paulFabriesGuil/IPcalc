@@ -18,7 +18,7 @@ def main(argv):
         sys.exit(2)
 
     # Define default values for the options
-    verbose = False
+    #global verbose == False
 
     # Process the options and arguments
     for opt, arg in opts:
@@ -41,5 +41,4 @@ def help():
     print("help")
 
 if __name__ == "__main__":
-    
     main(sys.argv[1:])
