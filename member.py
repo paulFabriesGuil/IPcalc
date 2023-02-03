@@ -15,16 +15,16 @@ def member(network,totest):
     print('-----------------------------------------------')
 
     if nt == nbr:
-        print(totest +" est une adresse de broadcast")
+        print(totest +"\033[0;33m est une adresse de broadcast\033[0m")
         exit()
     elif nt == nn:
-        print(totest +" est une adresse de réseau")
+        print(totest +"\033[0;33m  est une adresse de réseau\033[0m")
         exit()
     elif nt < nbr and nt > nn:
-        print(totest +" est une adresse du réseau")
+        print(totest +"\033[0;32m  est une adresse du réseau\033[0m")
         exit()
     elif nt > nbr or nt < nn:
-        print(totest +" est une adresse hors-plage")
+        print(totest +"\033[0;31m  est une adresse hors-plage\033[0m")
         exit()
 
-member('10.114.96.127/25', "10.114.95.255)
+member('192.168.1.1/24', "192.168.1.25")

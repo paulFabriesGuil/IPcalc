@@ -1,0 +1,12 @@
+Objectifs :
+    - Subnet Calculator
+    - operation sur des IPs
+        - Conversions :
+            - IP -> Bin
+            - Bin -> IP
+        - Membre d'un sous-réseau
+    - Opérations sur des masques:
+        - Conversions :
+            - Octet.*4 -> bin
+            - bin ->  Octet.*4
+            - CIDR
