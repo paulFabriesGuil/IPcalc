@@ -33,13 +33,13 @@ def byteconverter(ip):
 
 # todo accepter plusieurs type d'input...
 def host(ip_cidr):
-    if len(ip_cidr) > 18:
-        print("entrez une valeur valide type 192.168.1.1/18")
-        exit()
-    ip_cidr = int(ip_cidr.split("/",1)[1])
-    if ip_cidr > 32:
+    if len(ip_cidr) <= 18 and '/' in ip_cidr:
+        ip_cidr = ip_cidr.split("/",1)[1]
+    if len(ip_cidr) <= 15 and '.' in ip_cidr:
+        ip_cidr = mask_to_cidr(ip_cidr)
+    if int(ip_cidr) > 32:
         print("entrez un cidr valide : - 32")
-    Host_Count = pow(2, 32- ip_cidr) - 2
+    Host_Count = pow(2, 32- int(ip_cidr)) - 2
     return Host_Count
 
 def netad(ip_cidr):

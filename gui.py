@@ -59,7 +59,6 @@ ttk.Label(f1, textvariable=bina).grid(column=2, row=2, sticky=(W, E))
 ttk.Button(f1, text="convert", command=cipbin).grid(column=2, row=3, sticky=W)
 ttk.Label(f1, text="Entrez votre ip").grid(column=1, row=1, sticky=W)
 ttk.Label(f1, text="Résultat").grid(column=1, row=2, sticky=E)
-root.bind("<Return>", cipbin)
 
 # definition du calcul de l'ip 
 binar = StringVar()
@@ -70,7 +69,7 @@ ttk.Label(f2, textvariable=ipa).grid(column=2, row=2, sticky=(W, E))
 ttk.Button(f2, text="Convert", command=cbinip).grid(column=2, row=3, sticky=W)
 ttk.Label(f2, text="Entrez votre binaire").grid(column=1, row=1, sticky=W)
 ttk.Label(f2, text="Résultat").grid(column=1, row=2, sticky=E)
-root.bind("<Return>", cbinip)
+
 
 # definition du calcul de l'ip 
 netadr = StringVar()
@@ -81,7 +80,7 @@ ttk.Label(f3, textvariable=nhost).grid(column=2, row=2, sticky=(W, E))
 ttk.Button(f3, text="Calculate", command=chost).grid(column=2, row=3, sticky=W)
 ttk.Label(f3, text="entrez votre adresse réseau: ").grid(column=1, row=1, sticky=W)
 ttk.Label(f3, text="gives you").grid(column=1, row=2, sticky=E)
-root.bind("<Return>", chost)
+
 
 incidr = StringVar()
 incidr_entry = ttk.Entry(f4, width=18, textvariable=incidr)
@@ -91,7 +90,7 @@ ttk.Label(f4, textvariable=maskout).grid(column=2, row=2, sticky=(W, E))
 ttk.Button(f4, text="Calculate", command=ccidr).grid(column=2, row=3, sticky=W)
 ttk.Label(f4, text="entrez votre cidr: ").grid(column=1, row=1, sticky=W)
 ttk.Label(f4, text="gives you").grid(column=1, row=2, sticky=E)
-root.bind("<Return>", ccidr)
+
 
 inmask = StringVar()
 inmask_entry = ttk.Entry(f5, width=18, textvariable=inmask)
@@ -101,6 +100,6 @@ ttk.Label(f5, textvariable=cidrout).grid(column=2, row=2, sticky=(W, E))
 ttk.Button(f5, text="Calculate", command=cmask).grid(column=2, row=3, sticky=W)
 ttk.Label(f5, text="entrez votre masque réseau: ").grid(column=1, row=1, sticky=W)
 ttk.Label(f5, text="gives you").grid(column=1, row=2, sticky=E)
-root.bind("<Return>", cmask)
+
 
 root.mainloop()
