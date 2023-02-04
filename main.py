@@ -2,6 +2,7 @@
 
 from ipwork import *
 from network import *
+from sanitizer import *
 import getopt, sys
 
 def main(argv):
@@ -14,7 +15,7 @@ def main(argv):
         opts, args = getopt.getopt(argv, short_options, long_options)
     except getopt.GetoptError:
         # If the options are not correctly formatted, print an error message and exit
-        print("script.py -o <outputfile>")
+        print(help())
         sys.exit(2)
 
     # Define default values for the options
@@ -26,19 +27,23 @@ def main(argv):
             help()
             sys.exit()
         elif opt in ("-i", "--ip-to-bin"):
-            print(ip_to_bin(arg))
+            if isIP(arg) is True:
+                print(ip_to_bin(arg))
         elif opt in ("-b", "--bin-to-ip"):
             print(bin_to_ip(arg))
-            #verbose = True
         elif opt in ("-c"):
-            print(mask_to_cidr(arg))
+            if isMask(arg) is True:
+                print(mask_to_cidr(arg))
         elif opt in ("-m"):
-            print(cidr_to_mask(arg))
+            if isCIDR(arg) is True:
+                print(cidr_to_mask(arg))
         elif opt in ("-d"):
-            description(arg)
+            if isNet(arg) is True:
+                description(arg)
 
 def help():
-    print("help")
-    
+    help = "help"
+    return help
+
 if __name__ == "__main__":
     main(sys.argv[1:])

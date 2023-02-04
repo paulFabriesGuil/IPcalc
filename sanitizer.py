@@ -1,4 +1,7 @@
 #! /usr/bin/python
+
+import ipaddress
+
 def isCIDR(cidr):
 
     try: 
@@ -40,7 +43,6 @@ def isMask(mask):
         return True
     return 
     
-
 def isNet(net):
     if '/' not in net:
         print("entrez une adresse de réseau valide : 192.168.1.0/24")
@@ -54,5 +56,3 @@ def isNet(net):
     else:
         print("entrez une adresse de réseau valide : 192.168.1.0/24")
         return False
-
-
