@@ -18,12 +18,12 @@ def description(ip_cidr):
     FHOST = str(firsthost(NETAD))
     LHOST = str(lasthost(BROADAD))
 
-    bin_netad = ip_to_bin(NETAD).replace('.', ' ')
-    bin_broadad = ip_to_bin(BROADAD).replace('.', ' ')
-    bin_mask = ip_to_bin(MASK).replace('.', ' ')
-    bin_fhost = ip_to_bin(FHOST).replace('.', ' ')
-    bin_lhost = ip_to_bin(LHOST).replace('.', ' ')
-    bin_wild = ip_to_bin(WILDCARD).replace('.', ' ')
+    bin_netad = ip_to_bin(NETAD)
+    bin_broadad = ip_to_bin(BROADAD)
+    bin_mask = ip_to_bin(MASK)
+    bin_fhost = ip_to_bin(FHOST)
+    bin_lhost = ip_to_bin(LHOST)
+    bin_wild = ip_to_bin(WILDCARD)
 
     typeA = ["Adresse Réseau : ","Adresse Broadcast : ","Masque : ","Premier Hote : ", "Dernier Hote : ", "Wildcard : "]
     quaddot = [NETAD, BROADAD, MASK, FHOST, LHOST, WILDCARD]
@@ -31,8 +31,9 @@ def description(ip_cidr):
     print("-"*75)
     print(f"{'Rapport pour Adresse Réseau : ' +ip_cidr : ^75}")
     print("-"*75)
-    
-    for i in range(0, 4):
+
+    for i in range(0, 6):
+        quadbin[i] = quadbin[i].replace('.',' ')
         print(f"{typeA[i] : >20}{quaddot[i] : ^20}{quadbin[i] : >35}")
         print('-'*75)
     print(f"{'Nombre Hotes : ' : >20} {str(host(ip_cidr)) : ^20}")
